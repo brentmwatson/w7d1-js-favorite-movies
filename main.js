@@ -1,5 +1,3 @@
-console.log("Lookie here.")
-
 // Create an empty array
 movies=[]
 
@@ -16,14 +14,13 @@ movies.push({title: "The Dark Knight",
             year: "2008" })
 movies.push({title: "American Hustle",
             director: "David O. Russell",
-            actors: ["Christian Bale, Bradley Cooper, Amy Adams,Jeremy Renner,
-Jennifer Lawrence"],
+            actors: ["Christian Bale, Bradley Cooper, Amy Adams, Jeremy Renner, Jennifer Lawrence"],
             genre: "Suspence",
             year: "2013" })
 movies.push({title: "Donnie Darko",
             director: "Richard Kelly",
             actors: [" Jake Gyllenhaal, Jena Malone, Mary McDonnel"],
-            genre: "Genre3",
+            genre: "Thriller",
             year: "2001"})
 movies.push({title: "The Machinist",
             director: "Brad Anderson",
@@ -33,8 +30,15 @@ movies.push({title: "The Machinist",
 // Make sure each movie object has a title, director list, genre, year, and actor list
 console.log(movies)
 
-movies.sort(function(x, y){
+// functions
+alphabetize_title = movies.sort(function(x, y){
   return x.title > y.title
 })
-console.log(movies)
-console.log(JSON.stringify(movies))
+
+console.log(JSON.stringify(alphabetize_title))
+
+
+movies.forEach(function(film) {
+  document.getElementById('film').innerHTML += "<td>" + film.title + "</td><td>" + film.director + "</td><td>" + film.genre + "</td><td>" + film.title + "</td>"
+
+})
